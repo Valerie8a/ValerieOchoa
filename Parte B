@@ -1,0 +1,17 @@
+plaintext = "ftbopdifdvboepsptbwpmwjpefmdjofbnbmgjubopftubcbwjfoepmbufmfwjtjpotfoubepfombtbmbzbqspwfdipqbsbefdjsmfrvfibcjbdpmhbepfmmjcspefejftuffofmufoefefspefspqbsptbmpnjspdpnptjopivcjfsbfoufoejepobebrvjfspefdjsejkpbnbmgjuboprvfopmpifdpmhbepqpsrvfqsfwjbnfoufmpivcjfsbnpkbepdpombnbohvfsbojqpsrvftfnfibzbdbjepbmbhvbtjnqmfnfoufmpifdpmhbepqpsrvftjqbsbwfsdpnpsftjtufbmbjoufnqfsjfmptfncbuftefftubobuvsbmfabeftfsujdbmbjefbftefevdibnqefkbsvomjcspefhfpnfusjbdpmhbepbmbjoufnqfsjfqbsbwfstjbqsfoefdvbuspdptbtefmbwjebsfbm"
+plainfactor = as.factor(strsplit(plaintext, "")[[1]])
+plot(table(plainfactor),col=1, lwd=4, ylab="Frequency of Letters", xlab="Letters in text")
+
+hiddenfactor = as.factor(NULL)
+levels(hiddenfactor) <- letters
+#letters.shift = letters
+letters.shift = c(letters[-1], letters[1])
+for (i in seq_along(plainfactor)) {
+  j = which(letters.shift == plainfactor[i])
+  hiddenfactor[i] = letters[j]
+}
+
+hiddenfactor
+
+#caso del borracho
+#falta continuar
